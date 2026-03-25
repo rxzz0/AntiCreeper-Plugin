@@ -2,17 +2,16 @@
 /shelf/
 /.idea/workspace.xml
 
-# IntelliJ
+
 .idea/
 *.iml
 
-# Build folders
 target/
 build/
 out/
 
-# OS files
-.DS_Store
 
-# Logs
+*.DS_Store
+
+
 *.log
