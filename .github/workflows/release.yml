@@ -1,12 +1,11 @@
-
 name: Build and Release
 
 on:
   push:
     branches: [ "**" ]
 
-    permissions:
-      contents: write
+permissions:
+  contents: write
 
 jobs:
   build:
@@ -25,15 +24,11 @@ jobs:
       - name: Build with Maven
         run: mvn -B package --no-transfer-progress
 
-      - name: Get version from pom.xml
-        id: get_version
-        run: echo "VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)" >> $GITHUB_OUTPUT
-
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v${{ steps.get_version.outputs.VERSION }}-${{ github.run_number }}
-          name: Release v${{ steps.get_version.outputs.VERSION }} (#${{ github.run_number }})
+          tag_name: build-${{ github.run_number }}
+          name: Build ${{ github.run_number }}
           files: target/*.jar
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
