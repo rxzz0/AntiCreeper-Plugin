@@ -1,0 +1,4 @@
+name: AntiCreeper
+version: '${project.version}'
+main: plugin.AntiCreeper
+api-version: '1.21'
