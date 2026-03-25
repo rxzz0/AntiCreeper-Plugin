@@ -24,6 +24,9 @@ jobs:
       - name: Build with Maven
         run: mvn -B package --no-transfer-progress
 
+      - name: Rename jar
+        run: mv target/AntiCreeper-1.0.jar target/AntiCreeper.jar
+
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
