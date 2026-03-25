@@ -1,9 +1,0 @@
-name: AntiCreeper
-version: '1.0'
-main: plugin.anticreeper.AntiCreeper
-api-version: '1.21'
-
-commands:
-  AntiCreeper:
-    description: Enable or disable AntiCreeper
-    usage: /AntiCreeper <true|false>
